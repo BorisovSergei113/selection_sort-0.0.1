@@ -3,8 +3,8 @@
 using namespace std;
 
 int main() {
-    unsigned int a;
-    unsigned int place=0;
+     unsigned int a;
+     unsigned int place=0;
 
 
     string str;
@@ -25,17 +25,16 @@ int main() {
             exit(0);
         }
     }
-    while(place!=a){
-        for(int i=place;i<a;i++){
+    for(int j=0;j<a-1;j++){
+        place=j;
+        for (int i = place;i<a;i++) {
             if(mas[place]>mas[i]){
-                swap(mas[place],mas[i]);
-                break;
+                place=i;
             }
-            if(i==a-1){
-                place=place+1;
-            }
+            swap(mas[place],mas[j]);
         }
     }
+
     for(int i=0;i<a;i++){
         cout<<mas[i]<<" ";
     }
