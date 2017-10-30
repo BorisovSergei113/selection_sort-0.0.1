@@ -1,4 +1,3 @@
-
 #include <iostream>
 #include <sstream>
 using namespace std;
@@ -6,15 +5,16 @@ using namespace std;
 int main() {
     unsigned int a;
     unsigned int place=0;
-    
-    
+
+
     string str;
     getline(cin,str);
     istringstream stream(str);
     if(!(stream>>a)){
         cout<<"An error has occuried while reading input data."<<endl;
+        exit(0);
     }
-    
+
     float *mas=new float[a];
     string str2;
     getline(cin,str2);
@@ -22,7 +22,7 @@ int main() {
     for(int i=0;i<a;i++){
         if(!(numstream>>mas[i])){
             cout<<"An error has occuried while reading input data.";
-            break;
+            exit(0);
         }
     }
     while(place!=a){
@@ -35,7 +35,7 @@ int main() {
                 place=place+1;
             }
         }
-}
+    }
     for(int i=0;i<a;i++){
         cout<<mas[i]<<" ";
     }
